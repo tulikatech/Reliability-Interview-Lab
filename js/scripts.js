@@ -28,3 +28,26 @@ document.addEventListener("toggle", (e) => {
         if (d !== e.target) d.open = false;
     });
 }, true);
+
+// Scroll Reveal
+const observerOptions = {
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+            // Remove reveal class after animation to restore native hover transitions
+            setTimeout(() => {
+                entry.target.classList.remove("reveal", "active");
+            }, 800);
+        }
+    });
+}, observerOptions);
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+});

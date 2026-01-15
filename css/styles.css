@@ -131,6 +131,231 @@ a {
     padding: 28px 0 10px
 }
 
+/* HERO BACKGROUND MODE */
+.heroBg {
+    position: relative;
+    border: 1px solid rgba(38, 38, 38, .9);
+    border-radius: 22px;
+    overflow: hidden;
+    background: rgba(18, 18, 18, .55);
+    padding: 28px;
+    margin-top: 18px;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heroBgMedia {
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/hero-illustration.png");
+    background-size: cover;
+    background-position: center;
+    opacity: .33;
+    filter: contrast(1.06) saturate(1.06);
+    transform: scale(1.02);
+}
+
+.heroBgOverlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(950px 520px at 20% 35%, rgba(10, 10, 10, .92), rgba(10, 10, 10, .62) 60%, rgba(10, 10, 10, .42) 100%),
+        linear-gradient(90deg, rgba(10, 10, 10, .92) 0%, rgba(10, 10, 10, .62) 55%, rgba(10, 10, 10, .45) 100%);
+    pointer-events: none;
+}
+
+.heroInner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.25fr .75fr;
+    /* balance */
+    gap: 18px;
+    align-items: start;
+}
+
+/* Staggered Animation Children */
+.heroMain>*,
+.heroSide>* {
+    opacity: 0;
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.heroMain>*:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+/* Chips */
+.heroMain>*:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+/* H1 */
+.heroMain>*:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* P */
+.heroMain>*:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Actions */
+.heroMain>*:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+/* Micro */
+
+.heroSide>*:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+/* Card 1 */
+.heroSide>*:nth-child(2) {
+    animation-delay: 0.45s;
+}
+
+/* Card 2 */
+
+.heroMain {
+    max-width: 720px;
+    /* keeps hero text readable */
+}
+
+.heroSide {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.heroSideCard {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.card:hover,
+.heroSideCard:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.sideHead {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.sideTitle {
+    font-weight: 800;
+    letter-spacing: -.2px;
+}
+
+.sideSub {
+    color: var(--muted);
+    font-weight: 700;
+    font-size: 12.5px;
+}
+
+.sideNote {
+    margin-top: 10px;
+    color: rgba(189, 189, 189, .9);
+    font-weight: 700;
+    font-size: 12.5px;
+}
+
+.proofList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.miniSteps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.miniStep {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.miniNum {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(239, 68, 68, .35);
+    background: rgba(239, 68, 68, .12);
+    font-weight: 800;
+    font-size: 13px;
+
+    /* Fix visual centering */
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.miniStep b {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 800;
+}
+
+.miniStep span {
+    display: block;
+    color: var(--muted);
+    font-weight: 650;
+    font-size: 12.5px;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.heroBgMedia {
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/hero-illustration.png");
+    background-size: cover;
+    background-position: center;
+    opacity: .42;
+    filter: contrast(1.06) saturate(1.06);
+    transform: scale(1.03);
+}
+
+.heroBgOverlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(900px 500px at 25% 35%, rgba(10, 10, 10, .90), rgba(10, 10, 10, .55) 55%, rgba(10, 10, 10, .35) 100%),
+        linear-gradient(90deg, rgba(10, 10, 10, .92) 0%, rgba(10, 10, 10, .60) 50%, rgba(10, 10, 10, .45) 100%);
+    pointer-events: none;
+}
+
+.heroContent {
+    position: relative;
+    max-width: 680px;
+}
+
 .heroGrid {
     display: grid;
     grid-template-columns: 1.08fr .92fr;
@@ -146,7 +371,8 @@ a {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 12px
+    margin-bottom: 12px;
+    justify-content: center;
 }
 
 .chip {
@@ -197,6 +423,7 @@ h1 {
     gap: 12px;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     margin: 10px 0 10px
 }
 
@@ -209,10 +436,12 @@ h1 {
     border: 1px solid var(--border);
     background: rgba(18, 18, 18, .75);
     font-weight: 800;
+    transition: border-color 0.3s ease, background 0.3s ease;
 }
 
 .btn:hover {
-    border-color: rgba(255, 255, 255, .18)
+    border-color: rgba(255, 255, 255, .18);
+    background: rgba(18, 18, 18, .9);
 }
 
 .btnPrimary {
@@ -229,8 +458,10 @@ h1 {
 .proofGrid {
     margin-top: 14px;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px 14px;
+    grid-template-columns: repeat(3, auto);
+    /* Auto width for centering items */
+    gap: 10px 24px;
+    justify-content: center;
 }
 
 .proofItem {
@@ -322,24 +553,57 @@ h1 {
 }
 
 .step {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 12px;
+    align-items: center;
+
     border: 1px solid rgba(38, 38, 38, .9);
     background: rgba(18, 18, 18, .65);
-    border-radius: var(--r);
-    padding: 12px 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 800;
+    border-radius: 14px;
+
+    padding: 12px 14px;
+    min-height: 64px;
+    /* FORCE equal height */
 }
 
+/* Step number (force consistency) */
 .stepNum {
-    width: 30px;
-    height: 30px;
-    border-radius: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+
     display: grid;
     place-items: center;
-    border: 1px solid rgba(239, 68, 68, .25);
-    background: rgba(239, 68, 68, .10);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    border: 1px solid rgba(239, 68, 68, .35);
+    background: rgba(239, 68, 68, .12);
+    color: #fff;
+
+    flex-shrink: 0;
+}
+
+/* Step text (prevent overflow) */
+.stepText {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.stepText b {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.stepText .muted {
+    font-size: 12.5px;
+    white-space: nowrap;
+    /* IMPORTANT */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .cards {
@@ -353,6 +617,13 @@ h1 {
     background: rgba(18, 18, 18, .70);
     border-radius: var(--r);
     padding: 14px;
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .cardTop {
@@ -456,9 +727,114 @@ summary::-webkit-details-marker {
 .faq p {
     margin: 10px 0 0;
     color: var(--muted);
-    font-weight: 600
+    font-weight: 600;
 }
 
+/* WAYS TO WORK TOGETHER */
+.ways {
+    display: grid;
+    gap: 16px;
+    margin-top: 14px;
+}
+
+.wayItem {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.wayItem:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.wayHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.wayHeader h3 {
+    margin: 0;
+    font-family: "Space Grotesk", Inter, system-ui;
+    font-size: 19px;
+    color: var(--text);
+    letter-spacing: -0.4px;
+}
+
+.wayPrice {
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 15px;
+    font-family: monospace;
+    opacity: 0.9;
+}
+
+.wayBody p {
+    margin: 0 0 12px;
+    line-height: 1.5;
+    font-size: 15px;
+    color: rgba(230, 230, 230, 0.9);
+}
+
+.wayBody ul {
+    margin: 0 0 16px;
+    padding-left: 20px;
+    color: var(--muted);
+    font-size: 14.5px;
+}
+
+.wayBody li {
+    margin-bottom: 6px;
+}
+
+.wayBest {
+    font-size: 14px;
+    color: var(--muted);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 12px;
+}
+
+.wayBest strong {
+    color: #fff;
+    margin-right: 6px;
+}
+
+.waysCta {
+    margin-top: 40px;
+    text-align: center;
+    background: rgba(18, 18, 18, 0.4);
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    padding: 24px;
+    border-radius: 16px;
+}
+
+.waysCta p {
+    margin: 0 0 16px;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text);
+}
+
+/* SCROLL REVEAL UTILITY */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FOOTER */
 .footer {
     padding: 16px 0 8px
 }
@@ -501,8 +877,16 @@ summary::-webkit-details-marker {
         display: none
     }
 
-    .heroGrid {
-        grid-template-columns: 1fr
+    .heroBg {
+        padding: 18px;
+    }
+
+    .heroInner {
+        grid-template-columns: 1fr;
+    }
+
+    .heroMain {
+        max-width: 100%;
     }
 
     .heroRight {
@@ -521,7 +905,43 @@ summary::-webkit-details-marker {
         grid-template-columns: 1fr
     }
 
-    .proofGrid {
+    .ways {
         grid-template-columns: 1fr
     }
+
+    .proofGrid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        /* Center items on mobile */
+        text-align: left;
+        /* Keep text left-aligned for readability */
+    }
+
+    .proofItem {
+        justify-content: flex-start;
+        /* Ensure left align of icon/text */
+        width: 100%;
+        max-width: 320px;
+        /* limit width */
+    }
+
+    /* Mobile adjustments for steps */
+    .step {
+        white-space: normal;
+    }
 }
+
+@media (max-width: 480px) {
+    .stepText .muted {
+        white-space: normal;
+    }
+}
+/* HARD OVERRIDE: center the mini step numbers */
+.miniNum, .stepNum { width: 26px !important; height: 26px !important; min-width: 26px !important; min-height: 26px !important; display: flex !important; align-items: center !important; justify-content: center !important; padding: 0 !important; margin: 0 !important; line-height: 1 !important; font-size: 12.5px !important; font-weight: 700 !important; text-align: center !important; border: 1px solid rgba(239, 68, 68, .35) !important; border-radius: 6px !important; background: rgba(239, 68, 68, .12) !important; color: #fff !important; }
+
+.miniStep { display: grid !important; grid-template-columns: 28px 1fr !important; gap: 10px !important; align-items: center !important; }
+
+.heroActions.left { display: flex; justify-content: flex-start; gap: 12px; margin-top: 14px; }
+
+.heroInner { display: block !important; }
+.chips { justify-content: flex-start !important; }
